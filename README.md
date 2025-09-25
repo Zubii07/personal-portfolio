@@ -39,7 +39,6 @@ Designed to showcase your **skills, projects, and testimonials** with **smooth a
 
 ## 📂 Project Structure
 
-```bash
 ```
 src/
 ├── components/
@@ -155,3 +154,4 @@ npm run build   # or yarn build
 ⭐ If you like this project, don’t forget to **star the repo** and share it!
 
 ---
+
