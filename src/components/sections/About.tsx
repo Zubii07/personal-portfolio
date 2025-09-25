@@ -88,7 +88,7 @@ const About = () => {
                   'Experience with agentic AI systems and LLM-based applications',
                   'Proficiency in Python, TensorFlow, PyTorch, and scikit-learn',
                   'Expertise in data preprocessing, analysis, and visualization',
-                  'Knowledge API integration',
+                  'Knowledge of API integration',
                   'Commitment to building scalable, ethical, and high-performance AI solutions'
 
                 ].map((item, index) => (
