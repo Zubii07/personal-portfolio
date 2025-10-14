@@ -7,8 +7,8 @@ const Hero = () => {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/CV/AI_ML_Resume.pdf'; 
-    link.download = 'Zohaib_AI_ML_Resume.pdf';
+    link.href = '/CV/AIML_Resume.pdf'; // Ensure this path is correct
+    link.download = 'AIML_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
