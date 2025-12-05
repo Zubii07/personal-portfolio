@@ -19,7 +19,7 @@ export const projects: Project[] = [
     technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'JWT', 'Tailwind CSS'],
     category: 'fullstack',
     githubUrl: 'https://github.com/Mani-420/Chat_app',
-   // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_webdevelopment-mern-react-activity-7351285315296223233-g6DC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
+    // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_webdevelopment-mern-react-activity-7351285315296223233-g6DC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
     features: [
       'Real-time messaging with Socket.io',
       'User authentication and authorization',
@@ -40,10 +40,10 @@ export const projects: Project[] = [
     images: [
       '/InterviewAgent/public.png',
       '/InterviewAgent/home.png',
-      '/InterviewAgent/public.png',
       '/InterviewAgent/round1.png',
+      '/InterviewAgent/Feedback.png',
     ],
-    technologies: ['React.js', 'Python', 'Flask', 'SQLite', 'SQLAlchemy', 'OpenAPI', 'STT','TTS', 'LangChain','SMTP'],
+    technologies: ['React.js', 'Python', 'Flask', 'SQLite', 'SQLAlchemy', 'OpenAPI', 'STT', 'TTS', 'LangChain', 'SMTP'],
     category: 'fullstack',
     githubUrl: 'https://github.com/Zubii07/Interview-Agent',
     // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_mernstack-webdevelopment-javascript-activity-7341883989835640836-Weiq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     technologies: ['React.js', 'Django', 'PostgreSQL', 'JWT', 'CSS3', 'RESTful APIs'],
     category: 'fullstack',
     githubUrl: 'https://github.com/Zubii07/Django-Notes-App',
-   // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_mernstack-webdevelopment-javascript-activity-7335698738729930752-cI8U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
+    // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_mernstack-webdevelopment-javascript-activity-7335698738729930752-cI8U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
     features: [
       'User authentication and authorization',
       'Create, edit, delete notes',
@@ -86,31 +86,51 @@ export const projects: Project[] = [
   },
 
   // Backend Projects
-//   {
-//     id: 'movie-review',
-//     title: 'Movie Review Platform Backend',
-//     description: 'A comprehensive RESTful API for a movie review platform with role-based access control.',
-//     longDescription: 'A robust backend API service for a movie review platform featuring JWT authentication, OTP verification, role-based access control, and comprehensive movie and review management systems.',
-//     images: [
-//       '/BlogApp/Dashboard p.jpg',
-//       '/BlogApp/Login p.jpg',
-//       '/BlogApp/Register p.jpg',
-//       '/BlogApp/Create p.jpg'
-//     ],
-//     technologies: ['Node.js', 'Express.js', 'MySQL', 'JWT', 'bcrypt', 'Zod validation', 'RESTful APIs'],
-//     category: 'backend',
-//     githubUrl: 'https://github.com/Mani-420/Movie_review2',
-//     features: [
-//       'JWT-based authentication',
-//       'OTP verification (email/SMS)',
-//       'Role-based access control (Admin/User)',
-//       'Movie management (CRUD)',
-//       'Review system with ratings',
-//       'Secure password hashing',
-//       'Request validation with Zod',
-//       'Comprehensive API documentation'
-//     ]
-//   },
+  {
+    id: 'mediderma-ai',
+    title: 'MediDerma-AI',
+    description: 'MediDerma-AI is an AI-powered mobile application that detects skin diseases from images using deep-learning models and provides instant diagnosis, treatment recommendations, weather-based skin alerts, and ancestry-based insights.',
+    longDescription: `MediDerma-AI is an intelligent dermatology assistant designed to make skin-health diagnosis 
+    accessible, fast, and reliable for everyone. Using advanced image processing and deep-learning techniques, the app
+    analyzes skin images captured through the camera or uploaded from the gallery to accurately detect conditions
+    such as acne, eczema, psoriasis, fungal infections, melanoma, basal cell carcinoma, and squamous cell carcinoma.
+
+    The system is powered by convolutional-neural-network-based models trained on diverse dermatology datasets, enabling
+    accurate classification even across varying skin tones and textures. A modern and user-friendly UI guides users
+    through scanning, prediction, and treatment suggestions, making it suitable for individuals, clinics, and healthcare
+    platforms.
+
+    Beyond diagnosis, MediDerma-AI goes a step further by providing personalized treatment recommendations,
+    UV/weather-based skin safety alerts, and ancestral skin-health insights. These features empower users with proactive
+    and preventive skincare guidance. The application is built using a scalable architecture with real-time prediction
+    APIs and secure cloud integration to ensure smooth performance, data protection, and reliability.
+
+    MediDerma-AI bridges the gap between professional dermatology and everyday users by offering early detection,
+    timely intervention guidance, and continuous skin-health monitoring right from a mobile device.`,
+    images: [
+      '/MediDerma/front.jpeg',
+      '/MediDerma/Create Account.jpeg',
+      '/MediDerma/Profile.jpeg',
+      '/MediDerma/home.jpeg',
+      '/MediDerma/actions.jpeg',
+      '/MediDerma/scan history.jpeg',
+      '/MediDerma/desease analysis.jpeg',
+      '/MediDerma/precautions.jpeg',
+      '/MediDerma/importance.jpeg',
+      '/MediDerma/location.jpeg',
+      '/MediDerma/Mode.jpeg',
+    ],
+    technologies: ['React Native', 'Python', 'FastAPI', 'Firebase', 'Deep Learning', 'Convolutional Neural Networks (CNNs)', 'Transfer Learning', 'TensorFlow', 'Image Preprocessing & Augmentation', 'Model Fine-tuning & Evaluation'],
+    category: 'ai-ml',
+    githubUrl: 'https://github.com/Mani-420/Movie_review2',
+    features: [
+      '🔍 AI-Powered Skin Disease Detection',
+      '💊 Treatment Recommendations',
+      '📸 Easy Image Scanning',
+      '🌤️ Weather-Based Skin Alerts',
+      '🧬 Ancestral & Genetic Skin Analysis',
+    ]
+  },
 // 
 //   // Frontend Projects
 //   {

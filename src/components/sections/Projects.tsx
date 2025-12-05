@@ -100,7 +100,7 @@ const Projects = () => {
               className="bg-white dark:bg-dark-700 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-dark-600 hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-pointer hover:-translate-y-1"
             >
               {/* Project Images Horizontal Scroll */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-dark-800">
                 {/* Scroll Container */}
                 <div
                   ref={(el) => scrollContainerRefs.current[project.id] = el}
@@ -111,13 +111,13 @@ const Projects = () => {
                   {project.images.map((image, index) => (
                     <div
                       key={index}
-                      className="flex-shrink-0 w-full h-full"
+                      className="flex-shrink-0 w-full h-full flex items-center justify-center"
                       style={{ scrollSnapAlign: 'start' }}
                     >
                       <img
                         src={image}
                         alt={`${project.title} - Screenshot ${index + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-110"
+                        className="w-full h-full object-contain transition-transform duration-300 ease-out hover:scale-110"
                       />
                     </div>
                   ))}
@@ -240,18 +240,19 @@ const Projects = () => {
             >
               <div className="relative">
                 {/* Modal Image Gallery */}
-                <div className="relative h-64 overflow-hidden">
-                  <div className="flex overflow-x-auto scrollbar-hide h-full">
+                <div className="relative overflow-hidden bg-gray-100 dark:bg-dark-800">
+                  <div className="flex overflow-x-auto scrollbar-hide">
                     {selectedProject.images.map((image, index) => (
                       <div
                         key={index}
-                        className="flex-shrink-0 w-full h-full"
-                        style={{ scrollSnapAlign: 'start' }}
+                        className="flex-shrink-0 w-full flex items-center justify-center"
+                        style={{ scrollSnapAlign: 'start', minHeight: '400px', maxHeight: '600px' }}
                       >
                         <img
                           src={image}
                           alt={`${selectedProject.title} - Screenshot ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
+                          style={{ maxHeight: '600px' }}
                         />
                       </div>
                     ))}
