@@ -122,7 +122,7 @@ export const projects: Project[] = [
     ],
     technologies: ['React Native', 'Python', 'FastAPI', 'Firebase', 'Deep Learning', 'Convolutional Neural Networks (CNNs)', 'Transfer Learning', 'TensorFlow', 'Image Preprocessing & Augmentation', 'Model Fine-tuning & Evaluation'],
     category: 'ai-ml',
-    githubUrl: 'https://github.com/Mani-420/Movie_review2',
+    githubUrl: 'https://github.com/Zubii07/MediDerma-AI',
     features: [
       '🔍 AI-Powered Skin Disease Detection',
       '💊 Treatment Recommendations',
