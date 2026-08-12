@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { BsQuote } from 'react-icons/bs';
 import { testimonials } from '../../data/testimonials';
-import { AnimatedElement, StaggeredContainer } from '../shared/AnimatedElement';
+import { AnimatedElement } from '../shared/AnimatedElement';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -122,7 +122,7 @@ const Testimonials = () => {
           animation="fade-in-up"
           duration={500}
           delay={400}
-          className="flex justify-center space-x-2 mt-8"
+          className="flex justify-center space-x-2 mt-4"
         >
           {testimonials.map((_, index) => (
             <button
@@ -137,43 +137,6 @@ const Testimonials = () => {
             />
           ))}
         </AnimatedElement>
-
-        {/* Testimonials Grid (for larger screens) */}
-        <StaggeredContainer staggerDelay={150} className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.slice(0, 3).map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-white dark:bg-dark-700 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-dark-600 hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-pointer hover:-translate-y-1"
-            >
-              {/* Rating */}
-              <div className="flex space-x-1 mb-4">
-                {renderStars(testimonial.rating)}
-              </div>
-
-              {/* Content */}
-              <blockquote className="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-                "{testimonial.content.length > 150 
-                  ? testimonial.content.substring(0, 150) + '...' 
-                  : testimonial.content}"
-              </blockquote>
-
-              {/* Author */}
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                  {testimonial.name.split(' ').map(n => n[0]).join('')}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    {testimonial.role} at {testimonial.company}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </StaggeredContainer>
       </div>
     </section>
   );

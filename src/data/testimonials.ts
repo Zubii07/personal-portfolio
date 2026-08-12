@@ -3,6 +3,15 @@ import { Testimonial } from '../types';
 export const testimonials: Testimonial[] = [
   {
     id: '1',
+    name: 'Jeen',
+    role: 'CEO',
+    company: 'First Bit',
+    content: 'Completed all the work with attention to all details. Very cooperative and good ideation too. Really liked working with Mr Zohaib.',
+    avatar: '/testimonials/jeen.jpg',
+    rating: 5
+  },
+  {
+    id: '2',
     name: 'Omar El-Sayed',
     role: 'AI Developer',
     company: 'TechCorp Solutions',
