@@ -7,8 +7,8 @@ const Hero = () => {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/CV/AIML_Resume.pdf'; // Ensure this path is correct
-    link.download = 'AIML_Resume.pdf';
+    link.href = '/CV/Zohaib_AIML.pdf'; // Ensure this path is correct
+    link.download = 'Zohaib_AIML.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -21,7 +21,7 @@ const Hero = () => {
     'Agentic AI Developer',
     'Deep Learning Researcher',
     'Generative AI Enthusiast',
-    'Web Developer',
+    'Computer Vision Specialist',
   ];
 
   return (

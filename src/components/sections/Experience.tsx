@@ -34,7 +34,7 @@ const Experience = () => {
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               My professional journey in Artificial Intelligence, Machine Learning, and Data Science, 
               highlighting hands-on projects, agentic AI systems, and continuous growth in building 
-              intelligent, data-driven solutions.
+              intelligent, data driven solutions.
           </p>
         </AnimatedElement>
 

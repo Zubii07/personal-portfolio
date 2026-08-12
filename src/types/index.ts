@@ -14,7 +14,7 @@ export interface Project {
   images: string[]; // Array of image paths for horizontal scrolling
   technologies: string[];
   category: 'frontend' | 'backend' | 'fullstack' | 'ai-ml';
-  githubUrl: string;
+  projectUrl: string;
   liveUrl?: string;
   linkedinUrl?: string;
   features: string[];
