@@ -3,40 +3,14 @@ import { Project } from '../types';
 export const projects: Project[] = [
   // Full Stack Projects
   {
-    id: 'chat-app',
-    title: 'Real-Time Chat Application',
-    description: 'A modern real-time chat application built with MERN stack and Socket.io for instant messaging.',
-    longDescription: 'A comprehensive real-time chat application featuring user authentication, real-time messaging, AI chat integration, user profiles, and responsive design. Built with modern web technologies for optimal performance and user experience.',
-    images: [
-      '/ChatApp/HomePage.jpg',
-      '/ChatApp/Login Page.jpg',
-      '/ChatApp/Register Page.jpg',
-      '/ChatApp/Chatting with AI.jpg',
-      '/ChatApp/Chatting_Side.jpg',
-      '/ChatApp/Setting Page.jpg',
-      '/ChatApp/Profile.jpg'
-    ],
-    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'JWT', 'Tailwind CSS'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com/Mani-420/Chat_app',
-    // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_webdevelopment-mern-react-activity-7351285315296223233-g6DC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
-    features: [
-      'Real-time messaging with Socket.io',
-      'User authentication and authorization',
-      'AI chat integration',
-      'User profile management',
-      'Responsive design',
-      'Dark/Light theme toggle',
-      'Message history and search'
-    ]
-  },
-  {
     id: 'AI-Interview-Agent',
     title: 'AI Interview Agent',
     description: 'A smart voice-based interview preparation tool that simulates real interview scenarios using AI.',
-    longDescription: `AI Voice Interview 🎙️🤖 is a web-based platform that helps candidates prepare for interviews tailored to their resume and job description (JD). Powered by LLMs with voice input/output, it simulates realistic interview scenarios, provides instant feedback, and tracks candidate progress.
-                     🔹 Round 1 (Implemented): Candidates answer education, experience, and subject-related questions in voice. The AI evaluates responses, gives improvement tips, and decides pass/fail with retry options.
-                     🔹 Round 2 (Upcoming): Auto-scheduled after Round 1 clearance with email confirmations/reminders. On the scheduled date, Round 2 unlocks automatically, following the same voice-based flow.`,
+    longDescription: `Problem: Candidates preparing for interviews often practice with generic question banks that ignore their actual resume and the specific job they're applying for, leading to poor alignment between preparation and real interview expectations.
+
+Solution: Built a web-based AI interview platform that generates personalized interview questions from a candidate's resume and job description, using LLMs with voice input/output to simulate a realistic, spoken interview experience rather than a static text quiz.
+
+Result/Impact: Delivered a fully functional Round 1 flow covering education, experience, and subject-matter questions, with the AI evaluating spoken responses, generating improvement tips, and issuing a pass/fail decision with retry support. Round 2 is designed to auto-schedule after Round 1 clearance with automated email confirmations and reminders, extending the same voice-based evaluation flow to a second interview stage.`,
     images: [
       '/InterviewAgent/public.png',
       '/InterviewAgent/home.png',
@@ -45,68 +19,26 @@ export const projects: Project[] = [
     ],
     technologies: ['React.js', 'Python', 'Flask', 'SQLite', 'SQLAlchemy', 'OpenAPI', 'STT', 'TTS', 'LangChain', 'SMTP'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/Zubii07/Interview-Agent',
-    // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_mernstack-webdevelopment-javascript-activity-7341883989835640836-Weiq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
+    projectUrl: 'https://github.com/Zubii07/Interview-Agent',
     features: [
       'User authentication and authorization',
-      'Resume & JD Upload',
-      'LLM asks questions in voice.',
-      'Candidate answers in voice.',
-      'LLM evaluates responses, provides feedback, improvement tips, and pass/fail status.',
-      'Retry option for candidates.',
+      'Resume & JD upload',
+      'LLM asks questions in voice',
+      'Candidate answers in voice',
+      'LLM evaluates responses, provides feedback, improvement tips, and pass/fail status',
+      'Retry option for candidates',
     ]
   },
-  {
-    id: 'notes-app',
-    title: 'Secure Notes Manager',
-    description: 'A secure, full-stack notes application with user authentication and CRUD operations.',
-    longDescription: 'A comprehensive notes management application that provides users with a secure platform to create, organize, and manage their notes. Features include user authentication, note categorization, and a clean, intuitive interface.',
-    images: [
-      '/NotesAPp/Notes_showNotes.jpg',
-      '/NotesAPp/Notes_edit.jpg',
-      '/NotesAPp/Notes_view.jpg',
-      '/NotesAPp/Notes_Empty.jpg',
-      '/NotesAPp/Notes_Login.jpg',
-      '/NotesAPp/Notes_Register.jpg',
-      '/NotesAPp/notes1.png'
-    ],
-    technologies: ['React.js', 'Django', 'PostgreSQL', 'JWT', 'CSS3', 'RESTful APIs'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com/Zubii07/Django-Notes-App',
-    // linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_mernstack-webdevelopment-javascript-activity-7335698738729930752-cI8U?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
-    features: [
-      'User authentication and authorization',
-      'Create, edit, delete notes',
-      'Secure data storage',
-      'User-specific notes',
-      'Clean and intuitive UI',
-      'Responsive design',
-      'Real-time updates'
-    ]
-  },
-
   // Backend Projects
   {
     id: 'mediderma-ai',
     title: 'MediDerma-AI',
     description: 'MediDerma-AI is an AI-powered mobile application that detects skin diseases from images using deep-learning models and provides instant diagnosis, treatment recommendations, weather-based skin alerts, and ancestry-based insights.',
-    longDescription: `MediDerma-AI is an intelligent dermatology assistant designed to make skin-health diagnosis 
-    accessible, fast, and reliable for everyone. Using advanced image processing and deep-learning techniques, the app
-    analyzes skin images captured through the camera or uploaded from the gallery to accurately detect conditions
-    such as acne, eczema, psoriasis, fungal infections, melanoma, basal cell carcinoma, and squamous cell carcinoma.
+    longDescription: `Problem: Access to timely dermatology diagnosis is limited by cost, location, and appointment availability, leaving many people without an easy way to get an early read on potentially serious skin conditions like melanoma or psoriasis before they worsen.
 
-    The system is powered by convolutional-neural-network-based models trained on diverse dermatology datasets, enabling
-    accurate classification even across varying skin tones and textures. A modern and user-friendly UI guides users
-    through scanning, prediction, and treatment suggestions, making it suitable for individuals, clinics, and healthcare
-    platforms.
+Solution: Built an AI-powered mobile dermatology assistant that analyzes skin images captured via camera or gallery upload, using convolutional neural networks trained on diverse dermatology datasets to classify conditions such as acne, eczema, psoriasis, fungal infections, melanoma, basal cell carcinoma, and squamous cell carcinoma across varying skin tones and textures.
 
-    Beyond diagnosis, MediDerma-AI goes a step further by providing personalized treatment recommendations,
-    UV/weather-based skin safety alerts, and ancestral skin-health insights. These features empower users with proactive
-    and preventive skincare guidance. The application is built using a scalable architecture with real-time prediction
-    APIs and secure cloud integration to ensure smooth performance, data protection, and reliability.
-
-    MediDerma-AI bridges the gap between professional dermatology and everyday users by offering early detection,
-    timely intervention guidance, and continuous skin-health monitoring right from a mobile device.`,
+Result/Impact: Delivered a mobile application that goes beyond diagnosis to provide personalized treatment recommendations, UV and weather-based skin safety alerts, and ancestral skin-health insights, built on a scalable architecture with real-time prediction APIs and secure cloud integration. The app bridges the gap between professional dermatology and everyday users, enabling early detection and continuous skin-health monitoring directly from a mobile device.`,
     images: [
       '/MediDerma/front.jpeg',
       '/MediDerma/Create Account.jpeg',
@@ -122,65 +54,114 @@ export const projects: Project[] = [
     ],
     technologies: ['React Native', 'Python', 'FastAPI', 'Firebase', 'Deep Learning', 'Convolutional Neural Networks (CNNs)', 'Transfer Learning', 'TensorFlow', 'Image Preprocessing & Augmentation', 'Model Fine-tuning & Evaluation'],
     category: 'ai-ml',
-    githubUrl: 'https://github.com/Zubii07/MediDerma-AI',
+    projectUrl: 'https://github.com/Zubii07/MediDerma-AI',
     features: [
-      '🔍 AI-Powered Skin Disease Detection',
-      '💊 Treatment Recommendations',
-      '📸 Easy Image Scanning',
-      '🌤️ Weather-Based Skin Alerts',
-      '🧬 Ancestral & Genetic Skin Analysis',
+      'AI-Powered Skin Disease Detection',
+      'Treatment Recommendations',
+      'Easy Image Scanning',
+      'Weather-Based Skin Alerts',
+      'Ancestral & Genetic Skin Analysis',
     ]
   },
-// 
-//   // Frontend Projects
-//   {
-//     id: 'landing-page',
-//     title: 'Modern Landing Page',
-//     description: 'A responsive and modern landing page built with React and Tailwind CSS.',
-//     longDescription: 'A beautifully designed, responsive landing page showcasing modern web design principles. Features smooth animations, mobile-first design, and optimized performance for the best user experience.',
-//     images: [
-//       '/LandingPag/Landing1.jpg',
-//       '/LandingPag/Landing2.jpg',
-//       '/LandingPag/Landing3.jpg',
-//       '/LandingPag/Landing4.jpg',
-//       '/LandingPag/land1.jpg',
-//       '/LandingPag/land2.jpg',
-//       '/LandingPag/landing5.jpg'
-//     ],
-//     technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'Responsive Design'],
-//     category: 'frontend',
-//     githubUrl: 'https://github.com/Mani-420/Landing_page',
-//     linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_reactjs-frontenddevelopment-webdevelopment-activity-7328442348260974593-muyL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
-//     features: [
-//       'Responsive design',
-//       'Modern UI/UX',
-//       'Smooth animations',
-//       'Mobile-first approach',
-//       'Optimized performance',
-//       'Cross-browser compatibility',
-//       'SEO optimized'
-//     ]
-//   },
-//   {
-//     id: 'recipe-sharing',
-//     title: 'Recipe Sharing Platform',
-//     description: 'A recipe sharing platform with user authentication and content management.',
-//     longDescription: 'A full-featured recipe sharing platform that allows users to discover, create, and share recipes. Features include user authentication, recipe management, and a community-driven approach to culinary content.',
-//     images: [
-//       '/RecipeShatring/Blog.jpg'
-//     ],
-//     technologies: ['Node.js', 'Express.js', 'MongoDB', 'EJS', 'Bootstrap', 'RESTful APIs'],
-//     category: 'frontend',
-//     githubUrl: 'https://github.com/Mani-420/Recipe-Blog',
-//     linkedinUrl: 'https://www.linkedin.com/posts/abdul-rehman-tahir-7068aa315_nodejs-expressjs-mongodb-activity-7301114877266350080-Kz7V?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFALYXYBT_Cep7VvnKzPypdFZ5kWMNZfOoI',
-//     features: [
-//       'User authentication',
-//       'Recipe creation and management',
-//       'Search and filter functionality',
-//       'User profiles',
-//       'Responsive design',
-//       'Community features',
-//       'Content moderation'
-//     ]
-//   }
+  {
+    id: 'apc-system',
+    title: 'Automatic Passenger Counting (APC) System',
+    description: 'A computer vision system for automatically counting bus/transit passengers using YOLO11m detection, BoT-SORT tracking, and geometric door-line crossing logic. Co-authored as a published research contribution.',
+    longDescription: `Problem: Public transit operators need accurate, automated passenger counts to plan routes, allocate resources, and report ridership data but manual counting is expensive, error-prone, and doesn't scale across large fleets.
+
+Solution: Built a computer vision-based passenger counting system that detects and tracks passengers in real time as they cross a bus doorway, using object detection and multi-object tracking combined with geometric crossing logic to count entries and exits accurately.
+
+Result/Impact: Delivered a working system after iterating through multiple architectural approaches (YOLOv8 zone-based counting → ViT scene classification → final YOLO11m + BoT-SORT + door-line crossing method), achieving 95% counting accuracy on test footage. Co-authored as a published research contribution supporting a client's master's thesis, with the paper published on Zenodo and additional submission targeted at IEEE.`,
+     images: [
+      '/APC/pipeline.png',
+      '/APC/platform view.png',
+      '/APC/door view boarding.png',
+    ],
+    technologies: ['Python', 'YOLO11m', 'BoT-SORT', 'OpenCV', 'Computer Vision', 'Object Tracking', 'Deep Learning'],
+    category: 'ai-ml',
+    projectUrl: 'https://zenodo.org/records/21223994',
+    features: [
+      'Iterated through multiple architectures including YOLOv8 zone-based counting and ViT scene classification before finalizing the YOLO11m + BoT-SORT approach',
+      'Published as a research contribution',
+      'Built for a client\'s master\'s thesis contribution',
+      'Geometric door-line crossing logic for reliable passenger counting'
+    ]
+  },
+  {
+    id: 'cvar-risk-forecasting',
+    title: 'Deep Learning Downside Risk Forecasting & CVaR Portfolio Optimization',
+    description: 'A quantitative finance pipeline forecasting downside risk and optimizing portfolios using Conditional Value-at-Risk (CVaR), combining classical GARCH baselines with LSTM/Transformer deep learning models.',
+    longDescription: `Problem: Traditional portfolio risk models like GARCH struggle to capture the non-linear, fat-tailed nature of financial market downturns leaving investors under prepared for tail risk events like market crashes.Standard variance based risk measures also fail to account for the severity of losses beyond a threshold, not just their probability.
+
+Solution: Built a six-phase deep learning pipeline that forecasts downside risk and optimizes portfolio allocation using Conditional Value-at-Risk (CVaR), a risk measure that captures expected losses in worst-case scenarios, not just average volatility. The system benchmarks classical statistical baselines against modern sequence models to identify the most reliable forecasting approach.
+
+Result/Impact: Delivered a production-grade risk forecasting system where the Transformer model outperformed the GARCH baseline by ~19% on forecast accuracy (MAE), statistically validated via Diebold-Mariano testing (p<0.001) across 20+ years of historical data and 3 major market stress scenarios (2008 GFC, COVID-19, 2022 inflation shock). The Phase 4 portfolio-engine rebuild prioritized methodological rigor over inflated results — isolating exactly how much value the AI forecasts added, rather than presenting vanity metrics.`,
+     images: [
+      '/RiskForcasting/35_dissertation_summary.png',
+      '/RiskForcasting/A2_performance_metrics_comparison.png',
+      '/RiskForcasting/E6_dm_tests.png',
+      '/RiskForcasting/D1_end_to_end_pipeline.png',
+      '/RiskForcasting/A4_weight_allocation_heatmaps.png',
+      '/RiskForcasting/28_three_crisis_vix.png',
+    ],
+    technologies: ['Python', 'PyTorch', 'LSTM', 'Transformers', 'GARCH', 'CVaR Optimization', 'Backtesting', 'Quantitative Finance'],
+    category: 'ai-ml',
+    projectUrl: 'https://github.com/Zubii07/Risk_Forcasting-Dissertation',
+    features: [
+      'GARCH baseline models for classical volatility forecasting comparison',
+      'LSTM and Transformer-based deep learning models for non-linear risk pattern detection',
+      'CVaR-based portfolio optimization for tail-risk-aware asset allocation',
+      'Comprehensive backtesting framework evaluated across 17 performance metrics',
+      'Stress-testing across 3 historical market crisis periods (e.g., 2008 Financial Crisis, COVID-19 crash)',
+      ' Mid-project methodology rebuild (Phase 4) to eliminate look-ahead bias and ensure result validity',
+    ]
+  },
+  {
+    id: 'recommender-system',
+    title: 'Movie Recommender System: BPR-MF vs LightGCN',
+    description: 'A comparative recommender system benchmarking Bayesian Personalized Ranking Matrix Factorization (BPR-MF) against LightGCN graph-based collaborative filtering on the MovieLens dataset.',
+    longDescription: `Problem: Recommendation systems need to balance accuracy with computational efficiency, but it's often unclear whether simpler matrix factorization approaches or more complex graph based models actually deliver better real world performance for a given dataset size.
+
+Solution: Built and benchmarked two recommendation approaches head-to-head on the MovieLens dataset, Bayesian Personalized Ranking Matrix Factorization (BPR-MF) as a classical baseline, and LightGCN, a graph neural network-based collaborative filtering model to compare accuracy, ranking quality, and computational trade-offs.
+
+Result/Impact: LightGCN outperformed the BPR-MF baseline by 15% on Recall@K, demonstrating the value of graph-based relationship modeling for recommendation tasks.`,
+    images: [
+      'RecommenderSystem/RS1&RS2 Final Graph.png',
+      'RecommenderSystem/movielens_eda.png',
+    ],
+    technologies: ['Python', 'PyTorch', 'LightGCN', 'Matrix Factorization', 'Collaborative Filtering', 'MovieLens', 'Recommender Systems'],
+    category: 'ai-ml',
+    projectUrl: 'https://github.com/Zubii07/MF-BPR-Comparison',
+    features: [
+      'Comparative model evaluation between BPR-MF and LightGCN',
+      'Graph neural network based recommendations',
+      'Performance benchmarking on standard recommendation metrics',
+      'Built using the MovieLens dataset'
+    ]
+  },
+  {
+    id: 'price-intelligence-dashboard',
+    title: 'FMCG Price Intelligence System',
+    description: 'A real-time price monitoring and comparison platform for a UAE retail client, scraping and analyzing pricing data across major regional retailers to deliver competitive intelligence.',
+    longDescription: `Problem: A UAE retail client needed real-time visibility into competitor pricing across major regional grocery chains to stay competitively priced, but manually tracking prices across multiple retailers was slow and unreliable.
+
+Solution: Built an automated price intelligence platform that scrapes product pricing from major UAE retailers — Carrefour, Union Coop, Sharjah Coop, and AD Coop — and surfaces it through a live comparison dashboard, giving the client a real-time view of the competitive pricing landscape.
+
+Result/Impact: Delivered a fully automated pipeline covering 5 retailers and 20+ products, refreshing pricing data daily, and cutting the client's manual price-checking effort from 10 hours/week to near-zero. The Streamlit dashboard gave the client actionable competitive intelligence they could act on immediately rather than relying on stale, manually collected data.`,
+    images: [
+      'FMCG/final.png',
+      'FMCG/home.png',
+      'FMCG/product 1.png',
+      'FMCG/product 2.png',
+    ],
+    technologies: ['Python', 'Streamlit', 'FastAPI', 'Web Scraping', 'Data Pipelines', 'PostgreSQL', 'Data Visualization'],
+    category: 'fullstack',
+    projectUrl: 'https://github.com/Zubii07/TOKENIZ-ED-UAE',
+    features: [
+      'Automated scraping across major retail sources including Carrefour, Union Coop, Sharjah Coop, and AD Coop',
+      'Price comparison dashboard for product monitoring',
+      'Streamlit and FastAPI based architecture',
+      'Built for a UAE retail client'
+    ]
+  }
 ];

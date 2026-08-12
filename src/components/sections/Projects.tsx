@@ -93,139 +93,163 @@ const Projects = () => {
         </AnimatedElement>
 
         {/* Projects Grid */}
-        <StaggeredContainer staggerDelay={100} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-white dark:bg-dark-700 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-dark-600 hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-pointer hover:-translate-y-1"
-            >
-              {/* Project Images Horizontal Scroll */}
-              <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-dark-800">
-                {/* Scroll Container */}
-                <div
-                  ref={(el) => scrollContainerRefs.current[project.id] = el}
-                  className="flex overflow-x-auto scrollbar-hide h-full"
-                  onScroll={(e) => handleImageScroll(project.id, e)}
-                  style={{ scrollSnapType: 'x mandatory' }}
-                >
-                  {project.images.map((image, index) => (
-                    <div
-                      key={index}
-                      className="flex-shrink-0 w-full h-full flex items-center justify-center"
-                      style={{ scrollSnapAlign: 'start' }}
-                    >
-                      <img
-                        src={image}
-                        alt={`${project.title} - Screenshot ${index + 1}`}
-                        className="w-full h-full object-contain transition-transform duration-300 ease-out hover:scale-110"
-                      />
+        <StaggeredContainer staggerDelay={100} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          {projects.map((project) => {
+            const safeTechnologies = project.technologies.filter(Boolean);
+            const visibleTechs = safeTechnologies.slice(0, 4);
+            const remainingCount = safeTechnologies.length - visibleTechs.length;
+
+            return (
+              <div
+                key={project.id}
+                className="bg-white dark:bg-dark-700 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-dark-600 hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-pointer hover:-translate-y-1 flex flex-col h-full"
+              >
+                {/* Project Images Horizontal Scroll */}
+                <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-dark-800">
+                  {/* Scroll Container */}
+                  <div
+                    ref={(el) => scrollContainerRefs.current[project.id] = el}
+                    className="flex overflow-x-auto scrollbar-hide h-full"
+                    onScroll={(e) => handleImageScroll(project.id, e)}
+                    style={{ scrollSnapType: 'x mandatory' }}
+                  >
+                    {project.images.map((image, index) => (
+                      <div
+                        key={index}
+                        className="flex-shrink-0 w-full h-full flex items-center justify-center"
+                        style={{ scrollSnapAlign: 'start' }}
+                      >
+                        <img
+                          src={image}
+                          alt={`${project.title} - Screenshot ${index + 1}`}
+                          className="w-full h-full object-contain transition-transform duration-300 ease-out hover:scale-110"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Navigation Arrows */}
+                  {project.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          scrollToImage(project.id, 'left');
+                        }}
+                        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200 ease-out hover:scale-110 active:scale-95 z-10"
+                      >
+                        <FiChevronLeft className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          scrollToImage(project.id, 'right');
+                        }}
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200 ease-out hover:scale-110 active:scale-95 z-10"
+                      >
+                        <FiChevronRight className="w-4 h-4" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Image Counter */}
+                  {project.images.length > 1 && (
+                    <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-xs font-medium">
+                      {(currentImageIndex[project.id] || 0) + 1} / {project.images.length}
                     </div>
-                  ))}
+                  )}
+
+                  {/* Multiple Images Indicator */}
+                  {project.images.length > 1 && (
+                    <div className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
+                      <span>🖼️</span>
+                      <span>{project.images.length}</span>
+                    </div>
+                  )}
+
+                  {/* View Details Button */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openModal(project)}
+                      className="opacity-0 hover:opacity-100 bg-white dark:bg-dark-800 p-3 rounded-full shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95"
+                    >
+                      <FiEye className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                    </button>
+                  </div>
                 </div>
 
-                {/* Navigation Arrows */}
-                {project.images.length > 1 && (
-                  <>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        scrollToImage(project.id, 'left');
-                      }}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200 ease-out hover:scale-110 active:scale-95 z-10"
-                    >
-                      <FiChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        scrollToImage(project.id, 'right');
-                      }}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full transition-all duration-200 ease-out hover:scale-110 active:scale-95 z-10"
-                    >
-                      <FiChevronRight className="w-4 h-4" />
-                    </button>
-                  </>
-                )}
-
-                {/* Image Counter */}
-                {project.images.length > 1 && (
-                  <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-xs font-medium">
-                    {(currentImageIndex[project.id] || 0) + 1} / {project.images.length}
-                  </div>
-                )}
-
-                {/* Multiple Images Indicator */}
-                {project.images.length > 1 && (
-                  <div className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
-                    <span>🖼️</span>
-                    <span>{project.images.length}</span>
-                  </div>
-                )}
-
-                {/* View Details Button */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                  <button
-                    onClick={() => openModal(project)}
-                    className="opacity-0 hover:opacity-100 bg-white dark:bg-dark-800 p-3 rounded-full shadow-lg transition-all duration-300 ease-out hover:scale-110 active:scale-95"
+                {/* Project Content */}
+                <div className="p-6 pb-5 flex flex-col h-full">
+                  <h3
+                    className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 2,
+                      overflow: 'hidden'
+                    }}
                   >
-                    <FiEye className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-                  </button>
+                    {project.title}
+                  </h3>
+                  <p
+                    className="text-gray-600 dark:text-gray-400 mb-4"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 3,
+                      overflow: 'hidden'
+                    }}
+                  >
+                    {project.description}
+                  </p>
+
+                  <div className="mt-auto flex flex-col gap-3">
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 min-h-[72px] overflow-hidden content-start items-start align-start">
+                      {visibleTechs.map((tech) => (
+                        <span
+                          key={tech}
+                          className="inline-flex items-center justify-center h-8 px-3 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs rounded-full leading-none"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {remainingCount > 0 && (
+                        <span className="inline-flex items-center justify-center h-8 px-3 bg-gray-100 dark:bg-dark-600 text-gray-600 dark:text-gray-400 text-xs rounded-full leading-none">
+                          +{remainingCount} more
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex space-x-3">
+                      <a
+                        href={project.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-gray-100 dark:bg-dark-600 hover:bg-gray-200 dark:hover:bg-dark-500 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg text-center text-sm font-medium transition-all duration-200 ease-out hover:scale-105 active:scale-95 flex items-center justify-center space-x-2"
+                      >
+                        <FiGithub size={16} />
+                        <span>View Project</span>
+                      </a>
+
+                      {project.linkedinUrl && (
+                        <a
+                          href={project.linkedinUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-700 dark:text-blue-300 py-2 px-4 rounded-lg text-center text-sm font-medium transition-all duration-200 ease-out hover:scale-105 active:scale-95 flex items-center justify-center space-x-2"
+                        >
+                          <FiLinkedin size={16} />
+                          <span>LinkedIn</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 4).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 text-xs rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 4 && (
-                    <span className="px-2 py-1 bg-gray-100 dark:bg-dark-600 text-gray-600 dark:text-gray-400 text-xs rounded-full">
-                      +{project.technologies.length - 4} more
-                    </span>
-                  )}
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex space-x-3">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-gray-100 dark:bg-dark-600 hover:bg-gray-200 dark:hover:bg-dark-500 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg text-center text-sm font-medium transition-all duration-200 ease-out hover:scale-105 active:scale-95 flex items-center justify-center space-x-2"
-                  >
-                    <FiGithub size={16} />
-                    <span>GitHub</span>
-                  </a>
-                  
-                  {project.linkedinUrl && (
-                    <a
-                      href={project.linkedinUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-700 dark:text-blue-300 py-2 px-4 rounded-lg text-center text-sm font-medium transition-all duration-200 ease-out hover:scale-105 active:scale-95 flex items-center justify-center space-x-2"
-                    >
-                      <FiLinkedin size={16} />
-                      <span>LinkedIn</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </StaggeredContainer>
 
         {/* Project Modal */}
@@ -297,7 +321,7 @@ const Projects = () => {
                     {selectedProject.title}
                   </h3>
                   
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed whitespace-pre-line">
                     {selectedProject.longDescription}
                   </p>
 
@@ -333,13 +357,13 @@ const Projects = () => {
 
                   <div className="flex space-x-4">
                     <a
-                      href={selectedProject.githubUrl}
+                      href={selectedProject.projectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 py-3 px-6 rounded-lg text-center font-medium transition-all duration-200 ease-out hover:scale-105 active:scale-95 flex items-center justify-center space-x-2"
                     >
                       <FiGithub size={18} />
-                      <span>View on GitHub</span>
+                      <span>View Project</span>
                     </a>
                     
                     {selectedProject.linkedinUrl && (
