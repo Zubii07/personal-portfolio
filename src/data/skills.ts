@@ -45,14 +45,14 @@ export const skills: Skill[] = [
     color: '#013243'
   },
   {
-    name: 'Agentic AI (LangChain, LangGraph)',
+    name: 'Agentic AI',
     icon: 'langchain',
     category: 'ai-ml',
     proficiency: 78,
     color: '#1C3C3C'
   },
   {
-    name: 'Data Visualization (Matplotlib, Seaborn)',
+    name: 'Data Visualization',
     icon: 'matplotlib',
     category: 'ai-ml',
     proficiency: 82,
@@ -80,22 +80,22 @@ export const skills: Skill[] = [
     color: '#FF4081'
   },
   {
-    name: 'Natural Language Processing (NLP)',
+    name: 'NLP',
     icon: 'nlp',
     category: 'ai-ml',
     proficiency: 85,
     color: '#9C27B0'
   },
-  // {
-  //   name: 'Computer Vision',
-  //   icon: 'computer-vision',
-  //   category: 'ai-ml',
-  //   proficiency: 82,
-  //   color: '#2196F3'
-  // },
+  {
+    name: 'Computer Vision',
+    icon: 'computer-vision',
+    category: 'ai-ml',
+    proficiency: 82,
+    color: '#2196F3'
+  },
 
   {
-    name: 'Machine Learning Algorithms',
+    name: 'ML Algorithms',
     icon: 'ml-algorithms',
     category: 'ai-ml',
     proficiency: 90,
@@ -252,11 +252,4 @@ export const skills: Skill[] = [
     proficiency: 85,
     color: '#FF6C37'
   },
-  {
-    name: 'C++ (Problem Solving)',
-    icon: 'cpp',
-    category: 'tools',
-    proficiency: 75,
-    color: '#00599C'
-  }
 ];

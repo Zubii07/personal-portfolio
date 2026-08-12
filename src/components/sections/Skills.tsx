@@ -41,47 +41,46 @@ const Skills = () => {
     const iconMap: { [key: string]: string } = {
       // AI & Machine Learning
       'Python': '🐍',
-      TensorFlow: '🧠',
-      PyTorch: '🔥',
+      'TensorFlow': '🧠',
+      'PyTorch': '🔥',
       'Scikit-learn': '📊',
-      Pandas: '🐼',
-      NumPy: '🔢',
-      'Agentic AI (LangChain, LangGraph)': '🤖',
-      'Data Visualization (Matplotlib, Seaborn)': '📈',
+      'Pandas': '🐼',
+      'NumPy': '🔢',
+      'Agentic AI': '🤖',
+      'Data Visualization': '📈',
       'Supervised Learning': '📊',
       'Unsupervised Learning': '📉',
       'Deep Learning': '🧠',
-      'Natural Language Processing (NLP)': '💬',
+      'NLP': '💬',
       //'Computer Vision': '👁️',
-      'Machine Learning Algorithms': '⚙️',
+      'ML Algorithms': '⚙️',
       'Data Preprocessing': '🔧',
       'Model Deployment': '🚀',
       'OpenAI API': '🤖',
       
       // Web Development
       'JavaScript (ES6+)': '📜',
-      TypeScript: '📘',
+      'TypeScript': '📘',
       'React.js': '⚛️',
       'Next.js': '⚡',
       'Node.js': '🟢',
       'Express.js': '🚀',
-      MongoDB: '🍃',
-       MySQL: '🐬',
+      'MongoDB': '🍃',
+      'MySQL': '🐬',
       'RESTful APIs': '🔗',
       'Python (Backend)': '🐍',
-      Flask: '🧪',
-      Django: '',
-      FastAPI: '⚡',
+      'Flask': '🧪',
+      'Django': '',
+      'FastAPI': '⚡',
       
       
       // Tools & Platforms
       'JWT Authentication': '🔐',
-      Git: '📝',
-      GitHub: '🐙',
+      'Git': '📝',
+      'GitHub': '🐙',
       'Jupyter Notebook': '📓',
       'VS Code': '💻',
       'Postman (API Testing)': '📮',
-      'C++ (Problem Solving)': '⚡'
     };
     return iconMap[skillName] || '💻';
   };
