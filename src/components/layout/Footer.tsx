@@ -17,8 +17,8 @@ const Footer = () => {
           >
             <h3 className="text-2xl font-bold gradient-text">M Zohaib</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              AI/ML Engineer passionate about building intelligent, data-driven,
-              and agentic AI solutions that solve real-world problems.
+              AI/ML Engineer passionate about building intelligent, data driven,
+              and agentic AI solutions that solve real world problems.
             </p>
           </AnimatedElement>
 
