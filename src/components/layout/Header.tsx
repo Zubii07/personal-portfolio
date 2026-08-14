@@ -59,7 +59,7 @@ const Header = () => {
               onClick={() => scrollToSection('#home')}
               className="cursor-pointer"
             >
-              Zohaib
+              MZ
             </button>
           </AnimatedElement>
 
